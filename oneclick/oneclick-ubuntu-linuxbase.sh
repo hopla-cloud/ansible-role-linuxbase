@@ -24,12 +24,10 @@ apt update
 DEBIAN_FRONTEND=noninteractive apt install ansible -y --allow-yes true
 
 # Install hoplacloud roles
-ansible-galaxy install hoplacloud.nginx_php
-ansible-galaxy install geerlingguy.mysql
+ansible-galaxy install hoplacloud.linuxbase
 
-# Write roles
-echo "- hoplacloud.nginx_php (${currdate})" >> /etc/hopla.cloud-roles
-echo "- geerlingguy.mysql (${currdate})" >> /etc/hopla.cloud-roles
+# Write roles into log file
+echo "- hoplacloud.linuxbase (${currdate})" >> /etc/hopla.cloud-roles
 
 # Install oneclick app
-ansible-playbook /root/.ansible/roles/hoplacloud.nginx_php/playbooks/nginx_php_mariadb.yml
+ansible-playbook /root/.ansible/roles/hoplacloud.linuxbase/playbooks/linuxbase.yml
