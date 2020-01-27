@@ -20,4 +20,7 @@ galaxy_info:
     - linux
     - hoplacloud
 
-dependencies: []
+dependencies:
+    - hoplacloud.linux_motd
+    - hoplacloud.fail2ban
+    - hoplacloud.postfix
