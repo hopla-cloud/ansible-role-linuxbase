@@ -24,11 +24,13 @@
     path: /etc/default/keyboard
     regexp: '^XKBLAYOUT'
     line: 'XKBLAYOUT="fr"'
+  when: ansible_distribution == "Ubuntu"
 
 - name: restart service keyboard
   systemd:
     state: restarted
     name: keyboard-setup
+  when: ansible_distribution == "Ubuntu"
 
 - name: Manage swap file entry in fstab.
   mount:
