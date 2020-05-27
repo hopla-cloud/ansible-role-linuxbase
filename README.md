@@ -22,7 +22,8 @@ Dependencies
 ------------
 
 - hoplacloud.linux_motd
-
+- hoplacloud.fail2ban
+- hoplacloud.postfix
 
 
 Example Playbook
